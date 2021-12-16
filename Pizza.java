@@ -1,18 +1,18 @@
-public class Pizza {
-    private String flavour;
+public class Pizza extends Object {
+
     private double sizeDiameter;
 
-    public Pizza(String flavour, double sizeDiameter) {
-        this.flavour = flavour;
+    public Pizza(double sizeDiameter) {
         this.sizeDiameter = sizeDiameter;
     }
 
     public String toString() {
-        return String.format("%s Pizza, with size %.2f inch", flavour, sizeDiameter);
+        return String.format("Pizza, with size %.2f inch", sizeDiameter);
     }
 
     public double getPizzaArea() {
         double radius = sizeDiameter / 2;
         return Math.PI * radius;
     }
+
 }

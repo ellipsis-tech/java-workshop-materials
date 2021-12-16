@@ -2,7 +2,7 @@ public class MakePizza {
     public static void main(String[] args) {
 
         // Creating the pizza
-        Pizza myPizza = new Pizza("Hawaiian", 10);
+        Pizza myPizza = new Pizza(10);
 
         // Printing the pizza
         System.out.println(myPizza.toString());
