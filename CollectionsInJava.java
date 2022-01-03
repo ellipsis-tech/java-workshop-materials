@@ -3,10 +3,10 @@ import java.util.*;
 public class CollectionsInJava {
     public static void main(String[] args) {
         ArrayList<Course> al = new ArrayList<>();
-        al.add(new Course("Sally", 20));
-        al.add(new Course("Ahmad", 23));
+        al.add(new Person("Sally", 20));
+        al.add(new Person("Ahmad", 23));
 
-        Iterator<Course> iter = al.iterator();
+        Iterator<Person> iter = al.iterator();
 
         
     }
