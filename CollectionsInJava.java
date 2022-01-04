@@ -2,7 +2,7 @@ import java.util.*;
 
 public class CollectionsInJava {
     public static void main(String[] args) {
-        ArrayList<Person> al = new ArrayList<>();
+        ArrayList<Course> al = new ArrayList<>();
         al.add(new Person("Sally", 20));
         al.add(new Person("Ahmad", 23));
 
