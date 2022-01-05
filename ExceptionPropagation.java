@@ -1,29 +1,28 @@
 public class ExceptionPropagation {
     public static void main(String[] args) {
-        System.out.println("In main");
-        System.out.println(a());
+        higherSupport(); // boss delegate support function
     }
 
-    public static int a() {
-        System.out.println("In a");
+    public static void higherSupport() {
         try {
-            return b();
-        } catch (ArithmeticException e) {
-            return 0;
+            basicSupport(); // delegate manual labour
+        } catch (TechnicalDifficultyException e) {
+            // SOLVE THE ISSUE - fix the tech issue
         }
     }
 
-    public static int b() {
-        System.out.println("In b");
-        return c();
+    public static void basicSupport() {
+        try {
+            customerCreatingProblem();
+        } catch (BasicHelpNeededException e) {
+            // SOLVE THE ISSUE - answer query
+        }
     }
 
-    public static int c() {
-        System.out.println("In c");
-        return methodDividingByZero();
-    }
-
-    public static int methodDividingByZero() {
-        return 1 / 0;
+    public static void customerCreatingProblem() {
+        throw new TechnicalDifficultyException();
     }
 }
+
+class BasicHelpNeededException extends RuntimeException {}
+class TechnicalDifficultyException extends RuntimeException {}

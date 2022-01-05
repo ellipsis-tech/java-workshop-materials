@@ -1,31 +1,29 @@
 public class CheckedExceptionPropagation {
-
-    public static void main(String[] args) {
-        System.out.println("In main");
-        System.out.println(a());
+    public static void main(String[] args) throws BigException {
+        higherSupport(); // boss delegate support function
     }
 
-    public static int a() {
-        System.out.println("In a");
+    public static void higherSupport() throws BigException {
         try {
-            return b();
-        } catch (CheckedException e) {
-            return 0;
+            basicSupport(); 
+        } catch (TechnicalException e) {
+            // SOLVE THE ISSUE - fix the tech issue
         }
     }
 
-    public static int b() throws CheckedException {
-        System.out.println("In b");
-        return c();
+    public static void basicSupport() throws TechnicalException, BigException {
+        try {
+            customerCreatingProblem();
+        } catch (HelpNeededException e) {
+            // SOLVE THE ISSUE - answer query
+        }
     }
 
-    public static int c() throws CheckedException {
-        System.out.println("In c");
-        return methodThrowingException();
+    public static void customerCreatingProblem() throws HelpNeededException, TechnicalException, BigException {
+        throw new TechnicalException();
     }
-
-    public static int methodThrowingException() throws CheckedException {
-        throw new CheckedException("hello");
-    }
-
 }
+
+class HelpNeededException extends Exception {} // Checked Exception
+class TechnicalException extends Exception {} // Checked Exception
+class BigException extends Exception {} // Checked Exception

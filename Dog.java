@@ -16,13 +16,22 @@ public class Dog implements Comparable<Dog> {
 
     @Override
     public int compareTo(Dog o) {
+
+        System.out.println("COMPARING@!@!!!");
         
-        int diff = this.weight - o.weight;
+        // Compare the names first
+        int diff = this.name.compareTo(o.name);
         
+        // If the names are the same, then compare the weight
         if (diff != 0) {
-            return - diff;
+            // The dogs are already not the same name
+            return diff;
         }
 
-        return - this.name.compareTo(o.name);
+        // Bob (10kg)
+        // Bob (20kg)
+
+        return this.weight - o.weight;
+
     }
 }
