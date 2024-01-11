@@ -6,9 +6,9 @@ class Bank {
     public String name;
     private ArrayList<Teller> tellers;
 
-    Bank(){
+    public Bank(){
         bankId = 0;
-        name = "Ellipsis"
+        name = "Ellipsis";
         tellers = new ArrayList<>();
     }
 
@@ -23,7 +23,7 @@ class Teller extends Person {
         super(id, name); // this calls the constructor of the parent class... What is the parent class?
     }
 
-    public void CollectMoney() {
+    public static void CollectMoney() {
         // Code ommitted for brevity
     }
 }
@@ -41,7 +41,7 @@ class Customer extends Person {
 
 // Person class
 class Person {
-    protected int id;
+    protected Integer id;
     protected String name;
 
     public Person(int id, String name) {
