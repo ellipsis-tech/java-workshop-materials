@@ -1,23 +1,55 @@
 import java.util.ArrayList;
-import java.util.Collections;
 
-public class PracticeQ4 {
-    public static void main(String[] args) {
+// Draw the relationships below in a UML Diagram
+class Bank {
+    public int bankId;
+    public String name;
+    private ArrayList<Teller> tellers;
 
-        ArrayList<Dog> dogsStorage = new ArrayList<Dog>();
-        dogsStorage.add(new Dog("Sparky", 10));
-        dogsStorage.add(new Dog("Sparky", 11));
-        dogsStorage.add(new Dog("A", 11));
-        dogsStorage.add(new Dog("B", 11));
-        dogsStorage.add(new Dog("C", 11));
-        dogsStorage.add(new Dog("Bubble", 5));
-        dogsStorage.add(new Dog("Sparky", 9));
-        dogsStorage.add(new Dog("Cherry", 20));
-        dogsStorage.add(new Dog("Rocks", 8));
-        dogsStorage.add(new Dog("Rocks", 4));
-        
-        Collections.sort(dogsStorage);
-        
-        System.out.println(dogsStorage);
+    Bank(){
+        bankId = 0;
+        name = "Ellipsis"
+        tellers = new ArrayList<>();
+    }
+
+    public ArrayList<Teller> getTellers() {
+        return tellers;
+    }
+}
+
+// Teller class
+class Teller extends Person {
+    public Teller(int id, String name) {
+        super(id, name); // this calls the constructor of the parent class... What is the parent class?
+    }
+
+    public void CollectMoney() {
+        // Code ommitted for brevity
+    }
+}
+
+// Customer class
+class Customer extends Person {
+    public Customer(int id, String name) {
+        super(id, name); // this calls the constructor of the parent class... What is the parent class?
+    }
+
+    protected String getName() {
+        return this.name;
+    }
+}
+
+// Person class
+class Person {
+    protected int id;
+    protected String name;
+
+    public Person(int id, String name) {
+        this.name = name;
+        this.id = id;
+    }
+
+    public Person(String name) {
+        this(0, name);
     }
 }

@@ -8,24 +8,5 @@ public class PracticeQ3 {
 
 class Person {
     
-    private String name;
-    private int height;
-    private double weight;
-
-    public Person(String name, int height, double weight) {
-        this.name = name;
-        this.height = height;
-        this.weight = weight;
-    }
-    
-    public void greet() {
-        System.out.println("Hello! My name is " + this.name);
-    }
-
-    public double calculateBmi() {
-        double metresHeight = (double) height / 100;
-        double bmi = weight / (metresHeight * metresHeight);
-        return bmi;
-    }
-
+    // Write your code here
 }
