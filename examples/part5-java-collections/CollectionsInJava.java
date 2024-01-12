@@ -2,11 +2,13 @@ import java.util.*;
 
 public class CollectionsInJava {
     public static void main(String[] args) {
-        ArrayList<Course> al = new ArrayList<>();
+        ArrayList<Person> al = new ArrayList<>();
         al.add(new Person("Sally", 20));
         al.add(new Person("Ahmad", 23));
 
         Iterator<Person> iter = al.iterator();
+
+        System.out.println(al);
 
         
     }
@@ -27,5 +29,10 @@ class Person{
 
     public int getAge(){
         return age;
+    }
+    
+    @Override
+    public String toString(){
+        return "Person( name=" + name +", age=" + age + " )";
     }
 }
